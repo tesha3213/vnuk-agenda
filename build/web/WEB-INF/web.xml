@@ -7,8 +7,17 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-   
-     <servlet>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>servletHiWorld</servlet-name>
         <servlet-class>
                 vn.edu.vnuk.agenda.servlet.HiWorld
@@ -19,12 +28,23 @@
         <servlet-name>servletHiWorld</servlet-name>
         <url-pattern>/hi</url-pattern>
     </servlet-mapping>
-    
+        
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.html</location>
+    </error-page>
+        
     <welcome-file-list>
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>
