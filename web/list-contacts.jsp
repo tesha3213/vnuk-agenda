@@ -8,6 +8,7 @@
 <html>
 
     <body>
+        <c:import url="header.jsp" />
         <jsp:useBean id="dao" class="vn.edu.vnuk.agenda.dao.ContactDao" />
             
         <table>
@@ -40,7 +41,7 @@
             </c:forEach>
           
         </table>
-
+        <c:import url="footer.jsp"/>
     </body>
 
 </html>

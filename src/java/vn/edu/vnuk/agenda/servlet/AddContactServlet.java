@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -68,11 +69,8 @@ public class AddContactServlet extends HttpServlet {
 		}
 		
 		// 	display name of the new contact
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Contact " + contact.getName() + " successfully added");
-		out.println("</body>");
-		out.println("</html>");
+		          RequestDispatcher rd = request.getRequestDispatcher("contact-added.jsp");
+                          rd.forward(request, response);
 		
 	}
 	
